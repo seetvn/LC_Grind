@@ -31,6 +31,8 @@ Each time you can either climb `1` or `2` steps. In how many distinct ways can y
 
 Wrote down the combos by hand,realized it was `fibonacci`.
 
+**Java**
+
 ```java
 
   public int climbStairs(int n) {
@@ -46,5 +48,28 @@ Wrote down the combos by hand,realized it was `fibonacci`.
         }
         return dp[n-1];
     }
+
+```
+
+**Ruby**
+```ruby
+# @param {Integer} n
+# @return {Integer}
+def climb_stairs(n)
+  dp=[]
+  dp.append(1)
+  dp.append(2)
+  x=2
+
+  while x<n 
+    dp.append(dp[x-1]+dp[x-2])
+    x+=1
+
+  end
+  return dp[n-1]
+
+    
+end
+
 
 ```
