@@ -38,13 +38,16 @@ By having each index as the multiplication of all elements that came before it e
 # @param {Integer[]} nums
 # @return {Integer[]}
 def product_except_self(nums)
+    #to create prefix array
     prefix_array=[1] * nums.length
     for x in 1..nums.length-1 do
         prefix_array[x]=prefix_array [x-1] * nums[x-1]
         
     end
     s=1
-
+    
+  #to create postfix array but with a single var "s" to represent "s" at each index
+  #single var to save space
     while x>-1 do
         prefix_array[x]=prefix_array[x]* s
         s=s * nums[x]
